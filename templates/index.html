@@ -2,14 +2,123 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego de Ciberseguridad</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+        .question {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .option-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            width: 100%;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .option-btn:hover {
+            background-color: #45a049;
+        }
+        .option-btn.correct {
+            background-color: #28a745;
+        }
+        .option-btn.incorrect {
+            background-color: #dc3545;
+        }
+        .feedback {
+            font-size: 18px;
+            margin: 20px 0;
+            color: #333;
+        }
+        .timer {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #d9534f;
+        }
+        .score {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>{{ question }}</h1>
-    <ul>
-        {% for option in options %}
-            <li>{{ option }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <div class="score">
+            <p>Puntaje: {{ score }}</p>
+        </div>
+        <div class="timer">
+            <p>Tiempo restante: <span id="timer">30</span> segundos</p>
+        </div>
+        <h1>Juego de Ciberseguridad</h1>
+        <div class="question">
+            <p>{{ question }}</p>
+        </div>
+        <ul class="options">
+            {% for option in options %}
+                <li>
+                    <button class="option-btn" onclick="checkAnswer(this, '{{ option }}')">{{ option }}</button>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="feedback" id="feedback"></div>
+        <script>
+            // Temporizador
+            let timer = 30;
+            let interval = setInterval(function() {
+                document.getElementById('timer').innerText = timer;
+                if (timer === 0) {
+                    clearInterval(interval);
+                    alert("Se acabó el tiempo!");
+                }
+                timer--;
+            }, 1000);
+
+            // Función para verificar la respuesta
+            function checkAnswer(button, option) {
+                const feedback = document.getElementById('feedback');
+                // Lógica para la respuesta correcta o incorrecta
+                if (option === 'Ignorar') {  // Cambiar esto por la respuesta correcta de tu juego
+                    button.classList.add('correct');
+                    feedback.innerHTML = "<p>¡Respuesta Correcta!</p>";
+                } else {
+                    button.classList.add('incorrect');
+                    feedback.innerHTML = "<p>¡Respuesta Incorrecta!</p>";
+                }
+                // Desactivar los botones después de la respuesta
+                const buttons = document.querySelectorAll('.option-btn');
+                buttons.forEach(function(btn) {
+                    btn.disabled = true;
+                });
+            }
+        </script>
+    </div>
 </body>
 </html>
