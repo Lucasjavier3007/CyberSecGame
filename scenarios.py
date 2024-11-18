@@ -138,6 +138,15 @@ scenarios = {
                 {"text": "Un virus que infecta tus archivos y los hace inaccesibles.", "is_correct": False},
                 {"text": "Un programa para acelerar tu conexión a Internet.", "is_correct": False}
             ]
+        },
+        {
+            "question": "¿?",
+            "options": [
+                {"text": ".", "is_correct": True},
+                {"text": ".", "is_correct": False},
+                {"text": ".", "is_correct": False},
+                {"text": ".", "is_correct": False}
+            ]
         }
     ]
 }
