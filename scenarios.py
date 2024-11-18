@@ -48,13 +48,13 @@ scenarios = {
     ],
     "Intermedio": [
         {
-        "Question": "¿Cuál es la mejor práctica para proteger tus cuentas en línea?",
-        "Options": [
-            {"text":"Usar la misma contraseña para todas las cuentas.","is_correct":False},
-            {"text":"Activar la autenticación en dos pasos siempre que sea posible.","is_correct":True},
-            {"text":"Compartir tus contraseñas con amigos para que puedan ayudarte.","is_correct":False},
-            {"text":"Usar contraseñas fáciles de recordar.","is_correct":False},
-                ]        
+            "question": "¿Cuál es la mejor práctica para proteger tus cuentas en línea?",
+            "options": [
+                {"text": "Usar la misma contraseña para todas las cuentas.", "is_correct": False},
+                {"text": "Activar la autenticación en dos pasos siempre que sea posible.", "is_correct": True},
+                {"text": "Compartir tus contraseñas con amigos para que puedan ayudarte.", "is_correct": False},
+                {"text": "Usar contraseñas fáciles de recordar.", "is_correct": False}
+            ]
         },
         {
             "question": "¿Qué debes hacer si encuentras un archivo sospechoso en tu computadora?",
@@ -66,7 +66,7 @@ scenarios = {
             ]
         },
         {
-            "question": "¿Si recibes un mensaje en redes sociales de alguien que no conoces, ¿cómo debes proceder?",
+            "question": "Si recibes un mensaje en redes sociales de alguien que no conoces, ¿cómo debes proceder?",
             "options": [
                 {"text": "Aceptar la solicitud de amistad para ver qué quiere.", "is_correct": False},
                 {"text": "Ignorar el mensaje si parece sospechoso.", "is_correct": True},
@@ -91,11 +91,11 @@ scenarios = {
                 {"text": "Verificar la URL en Google.", "is_correct": False},
                 {"text": "Ignorar los detalles y proceder.", "is_correct": False}
             ]
-        },
-                ],
+        }
+    ],
     "Difícil": [
         {
-            "question": "¿Qué es un ataque de 'Man inn the middle' (MITM)?",
+            "question": "¿Qué es un ataque de 'Man in the middle' (MITM)?",
             "options": [
                 {"text": "Un tipo de ataque que intercepta la comunicación entre dos partes para robar información.", "is_correct": True},
                 {"text": "Un virus que se propaga a través de redes inalámbricas.", "is_correct": False},
@@ -122,23 +122,24 @@ scenarios = {
             ]
         },
         {
-            "question": "¿Qué es un "zero-day exploit"?",
+            "question": "¿Qué es un 'zero-day exploit'?",
             "options": [
-                {"text": "Un tipo de virus que solo puede infectar tu sistema durante el primer día de su lanzamiento..", "is_correct": False},
+                {"text": "Un tipo de virus que solo puede infectar tu sistema durante el primer día de su lanzamiento.", "is_correct": False},
                 {"text": "Un ataque que explota una vulnerabilidad de seguridad desconocida hasta ese momento.", "is_correct": True},
                 {"text": "Un tipo de malware que se activa al abrir un archivo adjunto.", "is_correct": False},
-                {"text": "Un software que protege tu sistema de ataques conocidos..", "is_correct": False}
+                {"text": "Un software que protege tu sistema de ataques conocidos.", "is_correct": False}
             ]
         },
         {
-            "question": "¿Qué es un "pharming" en el contexto de ciberseguridad?",
+            "question": "¿Qué es un 'pharming' en el contexto de ciberseguridad?",
             "options": [
-                {"text": "Un tipo de ataque donde se redirige a los usuarios a un sitio web falso para robar su información..", "is_correct": True},
+                {"text": "Un tipo de ataque donde se redirige a los usuarios a un sitio web falso para robar su información.", "is_correct": True},
                 {"text": "Un software para mejorar la privacidad en línea.", "is_correct": False},
                 {"text": "Un virus que infecta tus archivos y los hace inaccesibles.", "is_correct": False},
                 {"text": "Un programa para acelerar tu conexión a Internet.", "is_correct": False}
             ]
-        },
-            ]
+        }
+    ]
 }
+
 

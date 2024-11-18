@@ -14,7 +14,7 @@ class CyberSecurityGame:
         self.current_level = None
         self.current_scenario = 0
         self.score = 0
-        self.time_left = 30
+        self.time_left = 50
         self.timer_id = None
 
         # Menú inicial
