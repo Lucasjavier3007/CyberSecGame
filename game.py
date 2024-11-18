@@ -1,7 +1,7 @@
 import tkinter as tk
 import random
-from scenarios import scenarios
-from tips import get_tip
+from scenarios import scenarios  # Asegúrate de que 'scenarios' esté bien definido
+from tips import get_tip  # Asegúrate de que 'get_tip' esté bien definido
 
 class CyberSecurityGame:
     def __init__(self, root):
@@ -80,12 +80,21 @@ class CyberSecurityGame:
                 text=option["text"],
                 font=("Arial", 12),
                 bg="#FF5722",  # Color de fondo más visible
-                fg="white",  # Color del texto blanco
+                fg="black",  # Color del texto negro
                 activebackground="#FF7043",  # Color cuando el botón está presionado
                 command=lambda opt=option: self.check_answer(opt)
             )
             btn.pack(pady=5)
             self.option_buttons.append(btn)
+
+        # Mostrar el temporizador
+        self.timer_label = tk.Label(
+            self.root,
+            text=f"Tiempo restante: {self.time_left}s",
+            font=("Arial", 12),
+            fg="white", bg="#1E1E2F"
+        )
+        self.timer_label.pack(pady=10)
 
     def check_answer(self, option):
         """Verifica la respuesta y muestra feedback."""
@@ -180,7 +189,7 @@ class CyberSecurityGame:
         """Inicia el temporizador."""
         if self.time_left > 0:
             self.time_left -= 1
-            self.timer_label.config(text=f"Tiempo: {self.time_left}s")
+            self.timer_label.config(text=f"Tiempo restante: {self.time_left}s")
             self.timer_id = self.root.after(1000, self.start_timer)
         else:
             self.end_game()
